@@ -45,7 +45,7 @@ const DashGrid = styled.div`
   display: grid;
   grid-gap: 1em;
   grid-template-columns: 5px 0.5fr 1fr 1fr;
-  grid-template-areas: 'number name fliple return';
+  grid-template-areas: 'number name ryno return';
   align-items: flex-start;
   padding: 20px 0;
 
@@ -62,17 +62,17 @@ const DashGrid = styled.div`
 
   @media screen and (min-width: 1200px) {
     grid-template-columns: 35px 2.5fr 1fr 1fr;
-    grid-template-areas: 'number name fliple return';
+    grid-template-areas: 'number name ryno return';
   }
 
   @media screen and (max-width: 740px) {
     grid-template-columns: 2.5fr 1fr 1fr;
-    grid-template-areas: 'name fliple return';
+    grid-template-areas: 'name ryno return';
   }
 
   @media screen and (max-width: 500px) {
     grid-template-columns: 2.5fr 1fr;
-    grid-template-areas: 'name fliple';
+    grid-template-areas: 'name ryno';
   }
 `
 
@@ -104,7 +104,7 @@ const DataText = styled(Flex)`
 
 const SORT_FIELD = {
   VALUE: 'VALUE',
-  fliple_RETURN: 'fliple_RETURN',
+  ryno_RETURN: 'ryno_RETURN',
 }
 
 function PositionList({ positions }) {
@@ -174,7 +174,7 @@ function PositionList({ positions }) {
             </RowFixed>
           </AutoColumn>
         </DataText>
-        <DataText area="fliple">
+        <DataText area="ryno">
           <AutoColumn gap="12px" justify="flex-end">
             <TYPE.main>{formattedNum(valueUSD, true, true)}</TYPE.main>
             <AutoColumn gap="4px" justify="flex-end">
@@ -263,8 +263,8 @@ function PositionList({ positions }) {
         if (sortedColumn === SORT_FIELD.HODL) {
           return p0?.hodl?.sum > p1?.hodl?.sum ? (sortDirection ? -1 : 1) : sortDirection ? 1 : -1
         }
-        if (sortedColumn === SORT_FIELD.fliple_RETURN) {
-          return p0?.fliple?.return > p1?.fliple?.return ? (sortDirection ? -1 : 1) : sortDirection ? 1 : -1
+        if (sortedColumn === SORT_FIELD.ryno_RETURN) {
+          return p0?.ryno?.return > p1?.ryno?.return ? (sortDirection ? -1 : 1) : sortDirection ? 1 : -1
         }
         if (sortedColumn === SORT_FIELD.VALUE) {
           const bal0 = (p0.liquidityTokenBalance / p0.pair.totalSupply) * p0.pair.reserveUSD
@@ -296,7 +296,7 @@ function PositionList({ positions }) {
         </Flex>
         <Flex alignItems="center" justifyContent="flexEnd">
           <ClickableText
-            area="fliple"
+            area="ryno"
             onClick={(e) => {
               setSortedColumn(SORT_FIELD.VALUE)
               setSortDirection(sortedColumn !== SORT_FIELD.VALUE ? true : !sortDirection)
@@ -310,12 +310,12 @@ function PositionList({ positions }) {
             <ClickableText
               area="return"
               onClick={() => {
-                setSortedColumn(SORT_FIELD.fliple_RETURN)
-                setSortDirection(sortedColumn !== SORT_FIELD.fliple_RETURN ? true : !sortDirection)
+                setSortedColumn(SORT_FIELD.ryno_RETURN)
+                setSortDirection(sortedColumn !== SORT_FIELD.ryno_RETURN ? true : !sortDirection)
               }}
             >
               {below740 ? 'Fees' : 'Total Fees Earned'}{' '}
-              {sortedColumn === SORT_FIELD.fliple_RETURN ? (!sortDirection ? '↑' : '↓') : ''}
+              {sortedColumn === SORT_FIELD.ryno_RETURN ? (!sortDirection ? '↑' : '↓') : ''}
             </ClickableText>
           </Flex>
         )}

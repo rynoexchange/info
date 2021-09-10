@@ -40,13 +40,13 @@ export function getTimeframe(timeWindow) {
 export function getPoolLink(token0Address, token1Address = null, remove = false) {
   if (!token1Address) {
     return (
-      `https://app.fliple.org/#/` +
+      `https://app.ryno.exchange/#/` +
       (remove ? `remove` : `add`) +
       `/${token0Address === '0xd2cfbcdbdf02c42951ad269dcffa27c02151cebd' ? 'ETH' : token0Address}/${'ETH'}`
     )
   } else {
     return (
-      `https://app.fliple.org/#/` +
+      `https://app.ryno.exchange/#/` +
       (remove ? `remove` : `add`) +
       `/${token0Address === '0xd2cfbcdbdf02c42951ad269dcffa27c02151cebd' ? 'ETH' : token0Address}/${token1Address === '0xd2cfbcdbdf02c42951ad269dcffa27c02151cebd' ? 'ETH' : token1Address
       }`
@@ -56,15 +56,15 @@ export function getPoolLink(token0Address, token1Address = null, remove = false)
 
 export function getSwapLink(token0Address, token1Address = null) {
   if (!token1Address) {
-    return `https://app.fliple.org/#/swap?inputCurrency=${token0Address}`
+    return `https://app.ryno.exchange/#/swap?inputCurrency=${token0Address}`
   } else {
-    return `https://app.fliple.org/#/swap?inputCurrency=${token0Address === '0xd2cfbcdbdf02c42951ad269dcffa27c02151cebd' ? 'ETH' : token0Address
+    return `https://app.ryno.exchange/#/swap?inputCurrency=${token0Address === '0xd2cfbcdbdf02c42951ad269dcffa27c02151cebd' ? 'ETH' : token0Address
       }&outputCurrency=${token1Address === '0xd2cfbcdbdf02c42951ad269dcffa27c02151cebd' ? 'ETH' : token1Address}`
   }
 }
 
 export function getMiningPoolLink(token0Address) {
-  return `https://app.fliple.org/#/uni/ETH/${token0Address}`
+  return `https://app.ryno.exchange/#/uni/ETH/${token0Address}`
 }
 
 export function getUniswapAppLink(linkVariable) {

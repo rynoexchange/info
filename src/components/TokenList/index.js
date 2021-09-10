@@ -14,7 +14,7 @@ import { useMedia } from 'react-use'
 import { withRouter } from 'react-router-dom'
 import { OVERVIEW_TOKEN_BLACKLIST } from '../../constants'
 import FormattedName from '../FormattedName'
-import { TYPE } from '../../Theme'
+import { TYPE, fontMono, fontSans } from '../../Theme'
 
 dayjs.extend(utc)
 
@@ -198,14 +198,14 @@ function TopTokenList({ tokens, itemMax = 10 }) {
             <FormattedName text={item.symbol.toUpperCase()} maxCharacters={5} />
           </DataText>
         )}
-        <DataText area="liq">{formattedNum(item.totalLiquidityUSD, true, false)}</DataText>
-        <DataText area="vol">{formattedNum(item.oneDayVolumeUSD, true, false)}</DataText>
+        <DataText area="liq" fontFamily={fontMono}>{formattedNum(item.totalLiquidityUSD, true, false)}</DataText>
+        <DataText area="vol" fontFamily={fontMono}>{formattedNum(item.oneDayVolumeUSD, true, false)}</DataText>
         {!below1080 && (
-          <DataText area="price" color="text" fontWeight="500">
+          <DataText area="price" color="text" fontWeight="500" fontFamily={fontMono}>
             {formattedNum(item.priceUSD, true)}
           </DataText>
         )}
-        {!below1080 && <DataText area="change">{formattedPercent(item.priceChangeUSD)}</DataText>}
+        {!below1080 && <DataText area="change" fontFamily={fontMono}>{formattedPercent(item.priceChangeUSD)}</DataText>}
       </DashGrid>
     )
   }

@@ -1,10 +1,10 @@
-# Fliple Info
+# Ryno Info
 
-Analytics site for Fliple
+Analytics site for Ryno
 
-Check it out live: [https://info.fliple.org/](https://info.fliple.org/).
+Check it out live: [https://info.ryno.exchange/](https://info.ryno.exchange/).
 
-Forked from [Uniswap/uniswap-info](https://github.com/Uniswap/uniswap-info), and updated to work with Fliple contracts.
+Forked from [Uniswap/uniswap-info](https://github.com/Uniswap/uniswap-info), and updated to work with Ryno contracts.
 
 ### To Start Development
 

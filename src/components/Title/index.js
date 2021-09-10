@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Flex } from 'rebass'
 import Link from '../Link'
 import { RowFixed } from '../Row'
-import Logo from '../../assets/logo-white.png'
+import Logo from '../../assets/logo-white.svg'
 
 const TitleWrapper = styled.div`
   text-decoration: none;
@@ -32,7 +32,7 @@ export default function Title() {
       <Flex alignItems="center">
         <RowFixed>
           <UniIcon id="link" onClick={() => history.push('/')}>
-            <img width={'75px'} src={Logo} alt="logo" />
+            <img width={'85px'} src={Logo} alt="logo" />
           </UniIcon>
         </RowFixed>
       </Flex>

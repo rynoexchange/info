@@ -6,7 +6,7 @@ import { isAddress } from '../utils'
 import copy from 'copy-to-clipboard'
 
 export function useColor(tokenAddress, token) {
-  const [color, setColor] = useState('#2172E5')
+  const [color, setColor] = useState('#D7342A')
   if (tokenAddress) {
     const path = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/${isAddress(
       tokenAddress

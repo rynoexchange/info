@@ -1,4 +1,4 @@
-export const FACTORY_ADDRESS = '0xd229680c2543385add6b317eb9037377dd3d97f1'
+export const FACTORY_ADDRESS = '0x18713a4ff739c3868b0ac788882087d5ee29794b'
 
 export const BUNDLE_ID = '1'
 
@@ -15,10 +15,10 @@ export const SUPPORTED_LIST_URLS__NO_ENS = [
 
 // hide from overview list
 export const OVERVIEW_TOKEN_BLACKLIST = [
-  '0xd883295149f5656f49d56c3bb12506cdf3672aab'
+  '0xb6505defe58759c09e0df0739f8f5a6f32bffd44'
 ]
 
 // pair blacklist
 export const PAIR_BLACKLIST = [
-  '0x17b5dd90e7f52f03fb83152961ad42ec4dc83104'
+  '0xb94d9df3722c01fe372f98f075ca07257432040e'
 ]

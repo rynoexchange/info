@@ -14,7 +14,7 @@ import Link from '../Link'
 import { Divider, EmptyCard } from '..'
 import DropdownSelect from '../DropdownSelect'
 import FormattedName from '../FormattedName'
-import { TYPE } from '../../Theme'
+import { TYPE, fontMono } from '../../Theme'
 import { updateNameData } from '../../utils/data'
 
 dayjs.extend(utc)
@@ -287,23 +287,23 @@ function TxnList({ transactions, symbol0Override, symbol1Override, color }) {
             {getTransactionType(item.type, item.token1Symbol, item.token0Symbol)}
           </Link>
         </DataText>
-        <DataText area="value">
+        <DataText area="value" fontFamily={fontMono}>
           {currency === 'ETH' ? 'Ξ ' + formattedNum(item.valueETH) : formattedNum(item.amountUSD, true)}
         </DataText>
         {!below780 && (
           <>
-            <DataText area="amountOther">
+            <DataText area="amountOther" fontFamily={fontMono}>
               {formattedNum(item.token1Amount) + ' '}{' '}
               <FormattedName text={item.token1Symbol} maxCharacters={5} margin={true} />
             </DataText>
-            <DataText area="amountToken">
+            <DataText area="amountToken" fontFamily={fontMono}>
               {formattedNum(item.token0Amount) + ' '}{' '}
               <FormattedName text={item.token0Symbol} maxCharacters={5} margin={true} />
             </DataText>
           </>
         )}
         {!below1080 && (
-          <DataText area="account">
+          <DataText area="account" fontFamily={fontMono}>
             <Link color={color} external href={`https://blockscout.com/poa/core/address/${item.account}`}>
               {item.account && item.account.slice(0, 6) + '...' + item.account.slice(38, 42)}
             </Link>

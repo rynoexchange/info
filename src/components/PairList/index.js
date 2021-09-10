@@ -13,7 +13,7 @@ import { formattedNum, formattedPercent } from '../../utils'
 import DoubleTokenLogo from '../DoubleLogo'
 import FormattedName from '../FormattedName'
 import QuestionHelper from '../QuestionHelper'
-import { TYPE } from '../../Theme'
+import { TYPE, fontMono } from '../../Theme'
 
 import { PAIR_BLACKLIST } from '../../constants'
 
@@ -173,11 +173,11 @@ function PairList({ pairs, color, disbaleLinks, maxItems = 10 }) {
               />
             </CustomLink>
           </DataText>
-          <DataText area="liq">{liquidity}</DataText>
-          <DataText area="vol">{volume}</DataText>
-          {!below1080 && <DataText area="volWeek">{formattedNum(pairData.oneWeekVolumeUSD, true)}</DataText>}
-          {!below1080 && <DataText area="fees">{formattedNum(pairData.oneDayVolumeUSD * 0.002, true)}</DataText>}
-          {!below1080 && <DataText area="apy">{apy}</DataText>}
+          <DataText area="liq" fontFamily={fontMono}>{liquidity}</DataText>
+          <DataText area="vol" fontFamily={fontMono}>{volume}</DataText>
+          {!below1080 && <DataText area="volWeek" fontFamily={fontMono}>{formattedNum(pairData.oneWeekVolumeUSD, true)}</DataText>}
+          {!below1080 && <DataText area="fees" fontFamily={fontMono}>{formattedNum(pairData.oneDayVolumeUSD * 0.002, true)}</DataText>}
+          {!below1080 && <DataText area="apy" fontFamily={fontMono}>{apy}</DataText>}
         </DashGrid>
       )
     } else {

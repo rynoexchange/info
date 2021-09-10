@@ -7,8 +7,7 @@ import {
   TOKEN_CHART,
   TOKENS_CURRENT,
   TOKENS_DYNAMIC,
-  PRICES_BY_BLOCK,
-  PAIR_DATA,
+  PRICES_BY_BLOCK
 } from '../apollo/queries'
 
 import { useEthPrice } from './GlobalData'
@@ -294,18 +293,6 @@ const getTopTokens = async (ethPrice, ethPriceOld) => {
           token0: data,
         })
 
-        // HOTFIX for Aave
-        if (data.id === '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9') {
-          const aaveData = await client.query({
-            query: PAIR_DATA('0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f'),
-            fetchPolicy: 'cache-first',
-          })
-          const result = aaveData.data.pairs[0]
-          data.totalLiquidityUSD = parseFloat(result.reserveUSD) / 2
-          data.liquidityChangeUSD = 0
-          data.priceChangeUSD = 0
-        }
-
         return data
       })
     )
@@ -421,18 +408,6 @@ const getTokenData = async (address, ethPrice, ethPriceOld) => {
     updateNameData({
       token0: data,
     })
-
-    // HOTFIX for Aave
-    if (data.id === '0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9') {
-      const aaveData = await client.query({
-        query: PAIR_DATA('0xdfc14d2af169b0d36c4eff567ada9b2e0cae044f'),
-        fetchPolicy: 'cache-first',
-      })
-      const result = aaveData.data.pairs[0]
-      data.totalLiquidityUSD = parseFloat(result.reserveUSD) / 2
-      data.liquidityChangeUSD = 0
-      data.priceChangeUSD = 0
-    }
   } catch (e) {
     console.log(e)
   }
@@ -715,7 +690,7 @@ export function useTokenPriceData(tokenAddress, timeWindow, interval = 3600) {
     const currentTime = dayjs.utc()
     const windowSize = timeWindow === timeframeOptions.MONTH ? 'month' : 'week'
     const startTime =
-      timeWindow === timeframeOptions.ALL_TIME ? 1628319889 : currentTime.subtract(1, windowSize).startOf('hour').unix()
+      timeWindow === timeframeOptions.ALL_TIME ? 1631178025 : currentTime.subtract(1, windowSize).startOf('hour').unix()
 
     async function fetch() {
       let data = await getIntervalTokenData(tokenAddress, startTime, interval, latestBlock)

@@ -17,7 +17,7 @@ import { BasicLink } from '../components/Link'
 import Search from '../components/Search'
 import { formattedNum, formattedPercent, getPoolLink, getSwapLink, localNumber } from '../utils'
 import { useTokenData, useTokenTransactions, useTokenPairs } from '../contexts/TokenData'
-import { TYPE, ThemedBackground } from '../Theme'
+import { TYPE, ThemedBackground, fontMono } from '../Theme'
 import { transparentize } from 'polished'
 import { useColor } from '../hooks'
 import CopyHelper from '../components/Copy'
@@ -218,7 +218,7 @@ function TokenPage({ address, history }) {
                   </TYPE.main>{' '}
                   {!below1080 && (
                     <>
-                      <TYPE.main fontSize={'1.5rem'} fontWeight={500} style={{ marginRight: '1rem' }}>
+                      <TYPE.main fontSize={'1.5rem'} fontFamily={fontMono} fontWeight={500} style={{ marginRight: '1rem' }}>
                         {price}
                       </TYPE.main>
                       {priceChange}
@@ -264,10 +264,10 @@ function TokenPage({ address, history }) {
                       </RowBetween>
                       <RowBetween align="flex-end">
                         {' '}
-                        <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
+                        <TYPE.main fontSize={'1.5rem'} fontFamily={fontMono} lineHeight={1} fontWeight={500}>
                           {price}
                         </TYPE.main>
-                        <TYPE.main>{priceChange}</TYPE.main>
+                        <TYPE.main fontFamily={fontMono}>{priceChange}</TYPE.main>
                       </RowBetween>
                     </AutoColumn>
                   </Panel>
@@ -279,10 +279,10 @@ function TokenPage({ address, history }) {
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
-                      <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
+                      <TYPE.main fontSize={'1.5rem'} fontFamily={fontMono} lineHeight={1} fontWeight={500}>
                         {liquidity}
                       </TYPE.main>
-                      <TYPE.main>{liquidityChange}</TYPE.main>
+                      <TYPE.main fontFamily={fontMono}>{liquidityChange}</TYPE.main>
                     </RowBetween>
                   </AutoColumn>
                 </Panel>
@@ -293,10 +293,10 @@ function TokenPage({ address, history }) {
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
-                      <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
+                      <TYPE.main fontSize={'1.5rem'} fontFamily={fontMono} lineHeight={1} fontWeight={500}>
                         {volume}
                       </TYPE.main>
-                      <TYPE.main>{volumeChange}</TYPE.main>
+                      <TYPE.main fontFamily={fontMono}>{volumeChange}</TYPE.main>
                     </RowBetween>
                   </AutoColumn>
                 </Panel>
@@ -308,10 +308,10 @@ function TokenPage({ address, history }) {
                       <div />
                     </RowBetween>
                     <RowBetween align="flex-end">
-                      <TYPE.main fontSize={'1.5rem'} lineHeight={1} fontWeight={500}>
+                      <TYPE.main fontSize={'1.5rem'} fontFamily={fontMono} lineHeight={1} fontWeight={500}>
                         {oneDayTxns ? localNumber(oneDayTxns) : oneDayTxns === 0 ? 0 : '-'}
                       </TYPE.main>
-                      <TYPE.main>{txnChangeFormatted}</TYPE.main>
+                      <TYPE.main fontFamily={fontMono}>{txnChangeFormatted}</TYPE.main>
                     </RowBetween>
                   </AutoColumn>
                 </Panel>

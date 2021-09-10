@@ -1,7 +1,7 @@
 {
-  "name": "@fliple/info",
+  "name": "@ryno/info",
   "private": true,
-  "homepage": "https://fliple.org",
+  "homepage": "https://ryno.exchange",
   "dependencies": {
     "@popperjs/core": "^2.4.2",
     "@reach/portal": "^0.10.3",

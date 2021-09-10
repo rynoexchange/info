@@ -5,7 +5,7 @@ import { useMedia } from 'react-use'
 import { useGlobalData, useEthPrice } from '../../contexts/GlobalData'
 import { formattedNum, localNumber } from '../../utils'
 
-import { TYPE } from '../../Theme'
+import { TYPE, fontMono } from '../../Theme'
 
 const Header = styled.div`
   width: 100%;
@@ -15,6 +15,7 @@ const Header = styled.div`
 
 const Medium = styled.span`
   font-weight: 500;
+  font-family: ${fontMono};
 `
 
 export default function GlobalStats() {

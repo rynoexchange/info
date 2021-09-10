@@ -384,6 +384,7 @@ const getChartData = async (oldestDateToFetch) => {
   } catch (e) {
     console.log(e)
   }
+
   return [data, weeklyData]
 }
 

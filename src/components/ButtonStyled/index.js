@@ -5,11 +5,12 @@ import { Plus, ChevronDown, ChevronUp } from 'react-feather'
 import { darken, transparentize } from 'polished'
 import { RowBetween } from '../Row'
 import { StyledIcon } from '..'
+import { fontMono } from '../../Theme'
 
 const Base = styled(RebassButton)`
   padding: 8px 12px;
   font-size: 0.825rem;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: 12px;
   cursor: pointer;
   outline: none;
@@ -64,8 +65,9 @@ export const ButtonLight = styled(Base)`
   color: ${({ color, theme }) => (color ? darken(0.1, color) : theme.primary1)};
 
   min-width: fit-content;
-  border-radius: 12px;
+  border-radius: 0.2rem;
   white-space: nowrap;
+  font-family: ${fontMono};
 
   a {
     color: ${({ color, theme }) => (color ? darken(0.1, color) : theme.primary1)};
@@ -100,8 +102,9 @@ export const ButtonDark = styled(Base)`
   background-color: ${({ color, theme }) => (color ? color : theme.primary1)};
   color: white;
   width: fit-content;
-  border-radius: 12px;
+  border-radius: 0.2rem;
   white-space: nowrap;
+  font-family: ${fontMono};
 
   :hover {
     background-color: ${({ color, theme }) => (color ? darken(0.1, color) : darken(0.1, theme.primary1))};

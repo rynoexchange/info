@@ -10,12 +10,15 @@ export default function ThemeProvider({ children }) {
   return <StyledComponentsThemeProvider theme={theme(darkMode)}>{children}</StyledComponentsThemeProvider>
 }
 
+export const fontMono = 'IBM Plex Mono, monospace'
+export const fontSans = 'Inter, sans-serif'
+
 const theme = (darkMode, color) => ({
   customColor: color,
   textColor: darkMode ? color : 'black',
 
   panelColor: darkMode ? 'rgba(255, 255, 255, 0)' : 'rgba(255, 255, 255, 0)',
-  backgroundColor: darkMode ? '#191326' : '#f5f3f3',
+  backgroundColor: darkMode ? '#151515' : '#f5f3f3',
 
   concreteGray: darkMode ? '#292C2F' : '#fffdfa',
   inputBackground: darkMode ? '#1F1F1F' : '#fffdfa',
@@ -32,11 +35,11 @@ const theme = (darkMode, color) => ({
   white: '#FFFFFF',
 
   // backgrounds / greys
-  bg1: darkMode ? '#212429' : '#fffdfa',
-  bg2: darkMode ? '#2C2F36' : '#F7F8FA',
-  bg3: darkMode ? '#40444F' : '#EDEEF2',
-  bg4: darkMode ? '#565A69' : '#CED0D9',
-  bg5: darkMode ? '#565A69' : '#888D9B',
+  bg1: darkMode ? '#151515' : '#fffdfa',
+  bg2: darkMode ? '#252525' : '#F7F8FA',
+  bg3: darkMode ? '#444444' : '#EDEEF2',
+  bg4: darkMode ? '#555555' : '#CED0D9',
+  bg5: darkMode ? '#555555' : '#888D9B',
   bg6: darkMode ? '#000' : '#FFFFFF',
 
   //specialty colors
@@ -46,11 +49,11 @@ const theme = (darkMode, color) => ({
   divider: darkMode ? 'rgba(43, 43, 43, 0.435)' : 'rgba(43, 43, 43, 0.035)',
 
   //primary colors
-  primary1: darkMode ? '#2172E5' : '#6366F1',
-  primary2: darkMode ? '#3680E7' : '#FF8CC3',
-  primary3: darkMode ? '#4D8FEA' : '#FF99C9',
-  primary4: darkMode ? '#376bad70' : '#F6DDE8',
-  primary5: darkMode ? '#153d6f70' : '#FDEAF1',
+  primary1: darkMode ? '#d7342a' : '#6366F1',
+  primary2: darkMode ? '#DF5D55' : '#FF8CC3',
+  primary3: darkMode ? '#E78680' : '#FF99C9',
+  primary4: darkMode ? '#AD2921' : '#F6DDE8',
+  primary5: darkMode ? '#821F19' : '#FDEAF1',
 
   // color text
   primaryText1: darkMode ? '#6da8ff' : '#6366F1',
@@ -67,7 +70,7 @@ const theme = (darkMode, color) => ({
   green1: '#27AE60',
   yellow1: '#FFE270',
   yellow2: '#F3841E',
-  link: '#4F46E5',
+  link: '#D7342A',
   blue: '2f80ed',
 
   background: darkMode ? 'black' : `radial-gradient(50% 50% at 50% 50%, #6366F1 30 0%, #fff 0%)`,
@@ -142,8 +145,6 @@ export const ThemedBackground = styled.div`
   max-width: 100vw !important;
   height: 200vh;
   mix-blend-mode: color;
-  background: ${({ backgroundColor }) =>
-    `radial-gradient(50% 50% at 50% 50%, ${backgroundColor} 0%, rgba(255, 255, 255, 0) 100%)`};
   position: absolute;
   top: 0px;
   left: 0px;
@@ -153,12 +154,8 @@ export const ThemedBackground = styled.div`
 `
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://rsms.me/inter/inter.css');
-  html { font-family: 'Inter', sans-serif; }
-  @supports (font-variation-settings: normal) {
-    html { font-family: 'Inter var', sans-serif; }
-  }
-
+  html { font-family: ${fontSans}; }
+  
   html,
   body {
     margin: 0;
