@@ -67,7 +67,7 @@ const theme = (darkMode, color) => ({
 
   // other
   red1: '#FF6871',
-  green1: '#27AE60',
+  green1: '#609d93',
   yellow1: '#FFE270',
   yellow2: '#F3841E',
   link: '#D7342A',
@@ -155,7 +155,7 @@ export const ThemedBackground = styled.div`
 
 export const GlobalStyle = createGlobalStyle`
   html { font-family: ${fontSans}; }
-  
+
   html,
   body {
     margin: 0;
