@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer, useMemo, useCallback, use
 import { client } from '../apollo/client'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
-import { useTimeframe } from './Application'
+import { useTimeframe, useListedTokens } from './Application'
 import {
   getPercentChange,
   getBlockFromTimestamp,
@@ -530,6 +530,7 @@ async function getAllTokensOnUniswap() {
 export function useGlobalData() {
   const [state, { update, updateAllPairsInUniswap, updateAllTokensInUniswap }] = useGlobalDataContext()
   const [ethPrice, oldEthPrice] = useEthPrice()
+  const tokens = useListedTokens()
 
   const data = state?.globalData
 
@@ -544,10 +545,10 @@ export function useGlobalData() {
       let allTokens = await getAllTokensOnUniswap()
       updateAllTokensInUniswap(allTokens)
     }
-    if (!data && ethPrice && oldEthPrice) {
+    if (!data && ethPrice && oldEthPrice && tokens) {
       fetchData()
     }
-  }, [ethPrice, oldEthPrice, update, data, updateAllPairsInUniswap, updateAllTokensInUniswap])
+  }, [ethPrice, oldEthPrice, tokens, update, data, updateAllPairsInUniswap, updateAllTokensInUniswap])
 
   return data || {}
 }
